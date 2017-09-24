@@ -14,6 +14,7 @@ public class BdHashMap <K, V> {
         node.value = value;
         if(head == null) {
             head = node;
+            return;
         }
         Node<K, V> temp = head;
         for(; temp.next != null;) {
@@ -67,5 +68,17 @@ public class BdHashMap <K, V> {
             temp = temp.next;
         }
         return null;
+    }
+    public int length() {
+        if(head == null) {
+            return 0;
+        }
+        Node<K, V> temp = head;
+        int count = 1;
+        while(temp.next != null) {
+            temp = temp.next;
+            count++;
+        }
+        return count;
     }
 }

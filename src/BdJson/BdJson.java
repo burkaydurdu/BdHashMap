@@ -27,7 +27,11 @@ public class BdJson {
             stringJson.append("{");
             for(int j = 0; j<bdHashMaps[i].length(); j++) {
                 stringJson.append(bdHashMaps[i].index(j).getKey() + ":");
-                stringJson.append(bdHashMaps[i].index(j).getValue());
+                if(bdHashMaps[i].index(j).getValue() instanceof String) {
+                    stringJson.append("'" + bdHashMaps[i].index(j).getValue() + "'");
+                } else {
+                    stringJson.append(bdHashMaps[i].index(j).getValue());
+                }
                 if(j + 1 != bdHashMaps[i].length())
                     stringJson.append(",");
             }

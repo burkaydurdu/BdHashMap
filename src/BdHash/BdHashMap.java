@@ -1,5 +1,7 @@
 package BdHash;
 
+import java.util.HashMap;
+
 public class BdHashMap <K, V> {
     private Node<K, V> head;
     public BdHashMap() {
@@ -40,7 +42,8 @@ public class BdHashMap <K, V> {
             back = back.next;
         }
     }
-    public Data<K, V> index(int index) {
+
+    public Data<K, V> indexOf(int index) {
         Node<K, V> temp = head;
         Data<K, V> data = new Data<>();
         if(index == 0) {

@@ -9,15 +9,12 @@ public class BdJson {
     public BdJson(BdHashMap [] bdHashMap) {
         this.bdHashMaps = bdHashMap;
     }
-
     public BdHashMap[] getBdHashMaps() {
         return bdHashMaps;
     }
-
     public void setBdHashMaps(BdHashMap[] bdHashMaps) {
         this.bdHashMaps = bdHashMaps;
     }
-
     public String toJson() {
         if(bdHashMaps == null) {
             return null;
@@ -26,11 +23,11 @@ public class BdJson {
         for(int i = 0; i<bdHashMaps.length; i++) {
             stringJson.append("{");
             for(int j = 0; j<bdHashMaps[i].length(); j++) {
-                stringJson.append(bdHashMaps[i].index(j).getKey() + ":");
-                if(bdHashMaps[i].index(j).getValue() instanceof String) {
-                    stringJson.append("'" + bdHashMaps[i].index(j).getValue() + "'");
+                stringJson.append(bdHashMaps[i].indexOf(j).getKey() + ":");
+                if(bdHashMaps[i].indexOf(j).getValue() instanceof String) {
+                    stringJson.append("'" + bdHashMaps[i].indexOf(j).getValue() + "'");
                 } else {
-                    stringJson.append(bdHashMaps[i].index(j).getValue());
+                    stringJson.append(bdHashMaps[i].indexOf(j).getValue());
                 }
                 if(j + 1 != bdHashMaps[i].length())
                     stringJson.append(",");
